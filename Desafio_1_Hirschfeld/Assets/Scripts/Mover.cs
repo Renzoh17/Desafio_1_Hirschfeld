@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    
     // Variables a configurar desde el editor
     [Header("Configuracion")]
     [SerializeField] float velocidad = 5f;
@@ -32,3 +33,6 @@ public class Mover : MonoBehaviour
         miRigidbody2D.AddForce(direccion * velocidad);
     }
 }
+
+
+
