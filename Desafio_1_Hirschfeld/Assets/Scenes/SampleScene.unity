@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 614015611}
   - component: {fileID: 614015610}
   - component: {fileID: 614015612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 674151563}
   - component: {fileID: 674151562}
   - component: {fileID: 674151564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 815196270}
   - component: {fileID: 815196272}
   - component: {fileID: 815196271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 833962908}
   - component: {fileID: 833962910}
   - component: {fileID: 833962909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 837946629}
   - component: {fileID: 837946628}
   - component: {fileID: 837946630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 1353420758}
   - component: {fileID: 1353420760}
   - component: {fileID: 1353420759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 1724468266}
   - component: {fileID: 1724468268}
   - component: {fileID: 1724468267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 1741233198}
   - component: {fileID: 1741233200}
   - component: {fileID: 1741233199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,6 +1728,7 @@ GameObject:
   - component: {fileID: 1819744210}
   - component: {fileID: 1819744212}
   - component: {fileID: 1819744213}
+  - component: {fileID: 1819744214}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -1795,7 +1796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819744207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.709, y: -0.122, z: 0}
+  m_LocalPosition: {x: -1.79, y: 0.063, z: 0.13482378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1879,6 +1880,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 5
   jugador: {fileID: 0}
+--- !u!95 &1819744214
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819744207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 821c9ff5660d4434e93d57b2e5ec1dda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1874537956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1911,7 @@ GameObject:
   - component: {fileID: 1874537959}
   - component: {fileID: 1874537958}
   - component: {fileID: 1874537957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2004,7 +2025,7 @@ GameObject:
   - component: {fileID: 1875224932}
   - component: {fileID: 1875224934}
   - component: {fileID: 1875224933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2118,7 +2139,7 @@ GameObject:
   - component: {fileID: 1887748541}
   - component: {fileID: 1887748543}
   - component: {fileID: 1887748542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2232,7 +2253,7 @@ GameObject:
   - component: {fileID: 1926939054}
   - component: {fileID: 1926939056}
   - component: {fileID: 1926939055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_05 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2457,7 +2478,7 @@ GameObject:
   - component: {fileID: 1960673078}
   - component: {fileID: 1960673077}
   - component: {fileID: 1960673079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tileBlue_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2571,7 +2592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2040060818}
   - component: {fileID: 2040060817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plaform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
