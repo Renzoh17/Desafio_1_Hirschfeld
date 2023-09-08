@@ -27,7 +27,7 @@ public class Mover : MonoBehaviour
         miAnimator = GetComponent<Animator>();
         miSprite = GetComponent<SpriteRenderer>();
         miCollider2D = GetComponent<PolygonCollider2D>();
-        saltarMask = LayerMask.GetMask("Pisos", "Plataformas");
+        saltarMask = LayerMask.GetMask("Pisos", "Plataformas", "Enemigos");
     }
 
     // Codigo ejecutado en cada frame del juego (Intervalo variable)
