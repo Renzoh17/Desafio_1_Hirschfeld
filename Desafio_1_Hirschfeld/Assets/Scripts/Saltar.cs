@@ -8,6 +8,8 @@ public class Saltar : MonoBehaviour
     // Variables a configurar desde el editor
     [Header("Configuracion")]
     [SerializeField] private float fuerzaSalto = 5f;
+    [SerializeField] private float fuerzaSaltoaux = 0f;
+    [SerializeField] private int hyperJumps = 0;
 
     [SerializeField] private AudioClip jumpSFX;
     [SerializeField] private AudioClip collisionSFX;
@@ -20,6 +22,7 @@ public class Saltar : MonoBehaviour
     private Rigidbody2D miRigidbody2D;
     private AudioSource miAudioSource;
 
+    
     // Codigo ejecutado cuando el objeto se activa en el nivel
     private void OnEnable()
     {
@@ -33,6 +36,7 @@ public class Saltar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
         {
             puedoSaltar = false;
+            if(hyperJumps != 0){hyperJumps--;}
 
             if (miAudioSource.isPlaying) { return; }
             miAudioSource.PlayOneShot(jumpSFX);
@@ -43,7 +47,7 @@ public class Saltar : MonoBehaviour
     {
         if (!puedoSaltar && !saltando)
         {
-            miRigidbody2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            miRigidbody2D.AddForce(Vector2.up * (fuerzaSalto + fuerzaSaltoaux), ForceMode2D.Impulse);
             saltando = true;
         }
     }
@@ -54,8 +58,17 @@ public class Saltar : MonoBehaviour
         puedoSaltar = true;
         saltando = false;
 
+        if(hyperJumps == 0){fuerzaSaltoaux = 0f;}
+
         if(miAudioSource.isPlaying) { return; }
             miAudioSource.PlayOneShot(collisionSFX);
+            
     }
-
+    
+    public void AumentarSalto(float fuerza){
+        fuerzaSaltoaux += fuerza;
+        if(hyperJumps <= 2){
+            hyperJumps++;
+        }
+    }
 }
