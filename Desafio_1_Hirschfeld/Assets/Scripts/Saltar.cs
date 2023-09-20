@@ -38,7 +38,7 @@ public class Saltar : MonoBehaviour
             puedoSaltar = false;
             if(hyperJumps != 0){hyperJumps--;}
 
-            if (miAudioSource.isPlaying) { return; }
+        if (miAudioSource.isPlaying) { return; }
             miAudioSource.PlayOneShot(jumpSFX);
         }
     }

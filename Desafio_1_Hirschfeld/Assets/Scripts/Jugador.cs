@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jugador : MonoBehaviour
 {
     [Header("Configuracion")]
-    [SerializeField] private float vida = 5f;
+    [SerializeField] private float vida = 10f;
 
     public void ModificarVida(float puntos)
     {
@@ -16,6 +16,7 @@ public class Jugador : MonoBehaviour
 
     private bool EstasVivo()
     {
+        if(vida == 0) {Debug.Log("PERDISTE");}
         return vida > 0;
     }
 
@@ -23,6 +24,6 @@ public class Jugador : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Meta")) { return; }
 
-        Debug.Log("GANASTE");
+        if(vida > 0){Debug.Log("GANASTE");}
     }
 }
