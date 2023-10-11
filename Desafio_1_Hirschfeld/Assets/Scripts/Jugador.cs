@@ -6,13 +6,19 @@ public class Jugador : MonoBehaviour
 {
     [Header("Configuracion")]
     [SerializeField] private float vida = 10f;
+    [SerializeField] private int vidaMaxima = 10;
 
     public void ModificarVida(float puntos)
     {
-        vida += puntos;
+        if(vida <= vidaMaxima){
+            vida += puntos;
+        }
         Debug.Log(EstasVivo());
     }
 
+    public void ModificarVidaMax(int vidamax){
+        vidaMaxima += vidamax;
+    }
 
     private bool EstasVivo()
     {
