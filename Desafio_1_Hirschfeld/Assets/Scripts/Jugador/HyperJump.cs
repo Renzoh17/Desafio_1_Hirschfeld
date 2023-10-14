@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HyperJump : MonoBehaviour
 {
-    [Header("Configuracion")]
-    [SerializeField] float fuerza = 5f;
     [SerializeField] int puntosexp = 5;
 
     private void OnParticleCollision(GameObject other)
@@ -13,7 +11,7 @@ public class HyperJump : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Saltar salto = other.GetComponent<Saltar>();
-            salto.AumentarSalto(fuerza);
+            salto.AumentarSalto();
             PlayerProgression exp = other.GetComponent<PlayerProgression>();
             exp.GainExperience(puntosexp);
         }
