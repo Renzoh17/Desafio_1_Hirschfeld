@@ -26,7 +26,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: vida
-    value: -5
+    value: 10
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: vidaMaxima
@@ -51,18 +51,18 @@ Preset:
   - target: {fileID: 0}
     propertyPath: jumpSFX
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 8300000, guid: c432eceb2b339104391811d4f395b112, type: 3}
   - target: {fileID: 0}
     propertyPath: collisionSFX
     value: 
-    objectReference: {fileID: 0}
+    objectReference: {fileID: 8300000, guid: c287375ea1df3164b91b9cb8e0af8715, type: 3}
   - target: {fileID: 0}
     propertyPath: currentLevel
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: currentExperience
-    value: 10
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: experienceToNextLevel

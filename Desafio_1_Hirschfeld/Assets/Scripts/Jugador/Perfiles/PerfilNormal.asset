@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: PerfilNormal
   m_EditorClassIdentifier: 
   vida: 10
-  vidaMaxima: 10
+  vidaMaxima: 20
   velocidad: 5
-  experienceToNextLevel: 0
-  experienceEscale: 0
+  fuerzaSalto: 5
+  hyperJumps: 0
+  jumpSFX: {fileID: 8300000, guid: c432eceb2b339104391811d4f395b112, type: 3}
+  collisionSFX: {fileID: 8300000, guid: c287375ea1df3164b91b9cb8e0af8715, type: 3}
+  currentLevel: 1
+  currentExperience: 45
+  experienceToNextLevel: 70
+  experienceEscale: 50
