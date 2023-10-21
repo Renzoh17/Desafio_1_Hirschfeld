@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HyperJump : MonoBehaviour
 {
-    [SerializeField] int puntosexp = 5;
+    [SerializeField] int puntos = 5;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -13,7 +13,10 @@ public class HyperJump : MonoBehaviour
             Saltar salto = other.GetComponent<Saltar>();
             salto.AumentarSalto();
             PlayerProgression exp = other.GetComponent<PlayerProgression>();
-            exp.GainExperience(puntosexp);
+            exp.GainExperience(puntos);
+            Jugador jugador = other.GetComponent<Jugador>();
+            jugador.ModificarVida(puntos);
+            Debug.Log(" PUNTOS DE VIDA REGENERADOS AL JUGADOR "+ puntos);
         }
     }
 }

@@ -5,8 +5,8 @@ public class PlayerData : ScriptableObject
 {
     //PLAYER
     [Header("Configuracion")]
-    [SerializeField] private float vida = 10f;
-    public float Vida {get => vida; set => vida = value;}
+    [SerializeField] private int vida = 10;
+    public int Vida {get => vida; set => vida = value;}
 
     [SerializeField] private int vidaMaxima = 10;
     public int VidaMaxima {get => vidaMaxima; set => vidaMaxima = value;}

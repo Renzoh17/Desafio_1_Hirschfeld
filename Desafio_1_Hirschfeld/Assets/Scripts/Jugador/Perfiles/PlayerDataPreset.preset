@@ -41,10 +41,6 @@ Preset:
     value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: fuerzaSaltoaux
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: hyperJumps
     value: 0
     objectReference: {fileID: 0}
@@ -70,6 +66,6 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: experienceEscale
-    value: 50
+    value: 30
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

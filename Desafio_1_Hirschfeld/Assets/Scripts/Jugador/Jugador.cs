@@ -1,17 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
     [SerializeField]
     private PlayerData playerPerfil;
+
+    //Eventos del Jugador
+
+    [SerializeField]
+    private UnityEvent<int> OnLivesChanged;
+
+    [SerializeField]
+    private UnityEvent<string> OnTextChanged;
+
+    private void Start(){
+        OnLivesChanged.Invoke(playerPerfil.Vida);
+        OnTextChanged.Invoke(playerPerfil.Vida.ToString());
+        
+    }
     
-    public void ModificarVida(float puntos)
+    public void ModificarVida(int puntos)
     {
-        if(playerPerfil.Vida <= playerPerfil.VidaMaxima){
-            playerPerfil.Vida += puntos;
+        if(puntos == 5 && playerPerfil.Vida < playerPerfil.VidaMaxima){
+                playerPerfil.Vida += puntos;
         }
+        if(puntos == -5 && playerPerfil.Vida != 0){
+                playerPerfil.Vida += puntos;
+        }
+        OnTextChanged.Invoke(playerPerfil.Vida.ToString());
         Debug.Log(EstasVivo());
     }
 
