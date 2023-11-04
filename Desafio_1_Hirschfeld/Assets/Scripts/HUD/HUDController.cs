@@ -5,10 +5,29 @@ using TMPro;
 
 public class HUDController : MonoBehaviour
 {
+
     [SerializeField] TextMeshProUGUI miTexto;
 
     [SerializeField] GameObject iconoJump;
     [SerializeField] GameObject contenedorIconosJump;
+
+    private void OnEnable(){
+        GameEvents.OnPause += Pausar;
+        GameEvents.OnResume += Reanudar;
+    }
+
+    private void OnDisable(){
+        GameEvents.OnPause -= Pausar;
+        GameEvents.OnResume -= Reanudar;
+    }
+
+    private void Pausar(){
+        UpdateTextHUD("PAUSADO");
+    }
+
+    private void Reanudar(){
+        UpdateTextHUD("REANUDADO");
+    }
 
     public void UpdateTextHUD(string newText){
         miTexto.text = newText;

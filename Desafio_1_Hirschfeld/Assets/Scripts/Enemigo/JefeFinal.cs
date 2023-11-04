@@ -9,6 +9,7 @@ public class JefeFinal : MonoBehaviour
     [SerializeField] float tiempoEntreMovimientos;
 
     [SerializeField] GameObject prefabProyectil;
+    [SerializeField] GameObject prefabProyectil2;
     [SerializeField] Transform puntoSpawnProyectil;
 
     private float tiempoActualEspera;
@@ -54,8 +55,14 @@ public class JefeFinal : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            yield return new WaitForSeconds(0.5f);
-            Instantiate(prefabProyectil, puntoSpawnProyectil.position, Quaternion.identity);
+            if(Random.Range(0,2) == 0){
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(prefabProyectil, puntoSpawnProyectil.position, Quaternion.identity);
+            }
+            else{
+               yield return new WaitForSeconds(0.5f);
+                Instantiate(prefabProyectil2, puntoSpawnProyectil.position, Quaternion.identity); 
+            }
         }
     }
 

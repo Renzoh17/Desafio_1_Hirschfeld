@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3293886153406853718}
   - component: {fileID: 3600368467084910183}
+  - component: {fileID: -7530141509833892869}
   - component: {fileID: 709157448039832479}
   - component: {fileID: 2153426920135547298}
   - component: {fileID: 5936592838223694347}
-  - component: {fileID: 7318906204911678539}
   m_Layer: 0
   m_Name: Fire Enemie
   m_TagString: Untagged
@@ -88,6 +88,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7530141509833892869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198557962973659664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa24d12bd6a417f4db0cd0e9026c1f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntos: 5
 --- !u!50 &709157448039832479
 Rigidbody2D:
   serializedVersion: 4
@@ -263,17 +276,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &7318906204911678539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198557962973659664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f706f813c5665ca47b8868ba962db23e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 5
-  jugador: {fileID: 0}

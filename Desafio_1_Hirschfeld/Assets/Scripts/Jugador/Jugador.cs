@@ -32,6 +32,7 @@ public class Jugador : MonoBehaviour
         if(puntos == -5 && playerPerfil.Vida != 0){
                 playerPerfil.Vida += puntos;
         }
+        GameManager.Instance.AddScore(puntos * 100);
         OnTextChanged.Invoke(playerPerfil.Vida.ToString());
         Debug.Log(EstasVivo());
     }
