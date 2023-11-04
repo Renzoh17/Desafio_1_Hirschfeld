@@ -4,41 +4,41 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {   
-    [SerializeField]
-    private PlayerData playerPerfil;
+    private Jugador misDatos; 
 
     // Codigo ejecutado cuando el objeto se activa en el nivel
     private void OnEnable()
     {
-        playerPerfil.MiRigidbody2D = GetComponent<Rigidbody2D>();
-        playerPerfil.MiAnimator = GetComponent<Animator>();
-        playerPerfil.MiSprite = GetComponent<SpriteRenderer>();
-        playerPerfil.MiCollider2D = GetComponent<PolygonCollider2D>();
-        playerPerfil.SaltarMask = LayerMask.GetMask("Pisos", "Plataformas", "Enemigos");
+        misDatos = GetComponent<Jugador>();
+        misDatos.PlayerPerfil.MiRigidbody2D = GetComponent<Rigidbody2D>();
+        misDatos.PlayerPerfil.MiAnimator = GetComponent<Animator>();
+        misDatos.PlayerPerfil.MiSprite = GetComponent<SpriteRenderer>();
+        misDatos.PlayerPerfil.MiCollider2D = GetComponent<PolygonCollider2D>();
+        misDatos.PlayerPerfil.SaltarMask = LayerMask.GetMask("Pisos", "Plataformas", "Enemigos");
     }
 
     // Codigo ejecutado en cada frame del juego (Intervalo variable)
     private void Update()
     {
-        playerPerfil.MoverHorizontal = Input.GetAxis("Horizontal");
-        playerPerfil.Direccion = new Vector2(playerPerfil.MoverHorizontal, 0f);
+        misDatos.PlayerPerfil.MoverHorizontal = Input.GetAxis("Horizontal");
+        misDatos.PlayerPerfil.Direccion = new Vector2(misDatos.PlayerPerfil.MoverHorizontal, 0f);
        
-        int velocidadX = (int)playerPerfil.MiRigidbody2D.velocity.x;
-        playerPerfil.MiSprite.flipX = velocidadX < 0;
-        playerPerfil.MiAnimator.SetInteger("Velocidad", velocidadX);
+        int velocidadX = (int)misDatos.PlayerPerfil.MiRigidbody2D.velocity.x;
+        misDatos.PlayerPerfil.MiSprite.flipX = velocidadX < 0;
+        misDatos.PlayerPerfil.MiAnimator.SetInteger("Velocidad", velocidadX);
 
-        playerPerfil.MiAnimator.SetBool("EnAire", !EnContactoConPlataforma());
+        misDatos.PlayerPerfil.MiAnimator.SetBool("EnAire", !EnContactoConPlataforma());
         
     }
 
     private void FixedUpdate()
     {
-        playerPerfil.MiRigidbody2D.AddForce(playerPerfil.Direccion * playerPerfil.Velocidad);
+        misDatos.PlayerPerfil.MiRigidbody2D.AddForce(misDatos.PlayerPerfil.Direccion * misDatos.PlayerPerfil.Velocidad);
     }
 
     private bool EnContactoConPlataforma()
     {
-        return playerPerfil.MiCollider2D.IsTouchingLayers(playerPerfil.SaltarMask);
+        return misDatos.PlayerPerfil.MiCollider2D.IsTouchingLayers(misDatos.PlayerPerfil.SaltarMask);
     }
 }
 

@@ -4,57 +4,57 @@ using UnityEngine;
 
 public class Saltar : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerData playerPerfil;
+    private Jugador misDatos;
     
     // Codigo ejecutado cuando el objeto se activa en el nivel
     private void OnEnable()
     {
-        playerPerfil.MiRigidbody2D = GetComponent<Rigidbody2D>();
-        playerPerfil.MiAudioSource = GetComponent<AudioSource>();
+        misDatos = GetComponent<Jugador>();
+        misDatos.PlayerPerfil.MiRigidbody2D = GetComponent<Rigidbody2D>();
+        misDatos.PlayerPerfil.MiAudioSource = GetComponent<AudioSource>();
     }
 
     // Codigo ejecutado en cada frame del juego (Intervalo variable)
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerPerfil.PuedoSaltar)
+        if (Input.GetKeyDown(KeyCode.Space) && misDatos.PlayerPerfil.PuedoSaltar)
         {
-            playerPerfil.PuedoSaltar = false;
-            if(playerPerfil.HyperJumps != 0){playerPerfil.HyperJumps--;}
+            misDatos.PlayerPerfil.PuedoSaltar = false;
+            if(misDatos.PlayerPerfil.HyperJumps != 0){misDatos.PlayerPerfil.HyperJumps--;}
 
-        if (playerPerfil.MiAudioSource.isPlaying) { return; }
-            playerPerfil.MiAudioSource.PlayOneShot(playerPerfil.JumpSFX);
+        if (misDatos.PlayerPerfil.MiAudioSource.isPlaying) { return; }
+            misDatos.PlayerPerfil.MiAudioSource.PlayOneShot(misDatos.PlayerPerfil.JumpSFX);
         }
     }
 
     private void FixedUpdate()
     {
-        if (!playerPerfil.PuedoSaltar && !playerPerfil.Saltando)
+        if (!misDatos.PlayerPerfil.PuedoSaltar && !misDatos.PlayerPerfil.Saltando)
         {
-            playerPerfil.MiRigidbody2D.AddForce(Vector2.up * (playerPerfil.FuerzaSalto + TieneHyperJump()), ForceMode2D.Impulse);
-            playerPerfil.Saltando = true;
+            misDatos.PlayerPerfil.MiRigidbody2D.AddForce(Vector2.up * (misDatos.PlayerPerfil.FuerzaSalto + TieneHyperJump()), ForceMode2D.Impulse);
+            misDatos.PlayerPerfil.Saltando = true;
         }
     }
 
     // Codigo ejecutado cuando el jugador colisiona con otro objeto
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerPerfil.PuedoSaltar = true;
-        playerPerfil.Saltando = false;
+        misDatos.PlayerPerfil.PuedoSaltar = true;
+        misDatos.PlayerPerfil.Saltando = false;
 
 
-        if(playerPerfil.MiAudioSource.isPlaying) { return; }
-            playerPerfil.MiAudioSource.PlayOneShot(playerPerfil.CollisionSFX);
+        if(misDatos.PlayerPerfil.MiAudioSource.isPlaying) { return; }
+            misDatos.PlayerPerfil.MiAudioSource.PlayOneShot(misDatos.PlayerPerfil.CollisionSFX);
             
     }
     
     public void AumentarSalto(){
-        if(playerPerfil.HyperJumps < 2){
-            playerPerfil.HyperJumps++;
+        if(misDatos.PlayerPerfil.HyperJumps < 2){
+            misDatos.PlayerPerfil.HyperJumps++;
         }
     }
     private float TieneHyperJump(){
-        if(playerPerfil.HyperJumps == 0){return 0f;} 
+        if(misDatos.PlayerPerfil.HyperJumps == 0){return 0f;} 
         return 5f;
     }
 }

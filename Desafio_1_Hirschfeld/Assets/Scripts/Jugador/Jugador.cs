@@ -7,6 +7,7 @@ public class Jugador : MonoBehaviour
 {
     [SerializeField]
     private PlayerData playerPerfil;
+    public PlayerData PlayerPerfil {get => playerPerfil;}
 
     //Eventos del Jugador
 
@@ -17,6 +18,7 @@ public class Jugador : MonoBehaviour
     private UnityEvent<string> OnTextChanged;
 
     private void Start(){
+
         OnLivesChanged.Invoke(playerPerfil.Vida);
         OnTextChanged.Invoke(playerPerfil.Vida.ToString());
         
