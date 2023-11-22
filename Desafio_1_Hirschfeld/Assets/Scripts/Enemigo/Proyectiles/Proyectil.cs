@@ -20,5 +20,7 @@ public abstract class Proyectil : MonoBehaviour
         Mover();
     }
 
+    
+
     protected abstract void Mover();
 }

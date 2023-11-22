@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JefeFinal : MonoBehaviour
 {
-    [SerializeField] float tiempoEntreDisparos;
+    [SerializeField] [Range(0.5f, 5f)] float tiempoEntreDisparos;
+    [SerializeField] [Range(0.5f, 5f)] float tiempoIntervaloEntreDisparos;
     [SerializeField] float tiempoEntreEmbestidas;
     [SerializeField] float tiempoEntreMovimientos;
 
@@ -20,9 +21,16 @@ public class JefeFinal : MonoBehaviour
     private const int Embestir = 1;
     private const int Mover = 2;
 
+    private ObjectPool objectPool;
+
+    private void Awake(){
+        objectPool = GetComponent<ObjectPool>();
+    }
+
     void Start()
     {
         estadoActual = DispararProyectil;
+        
         StartCoroutine(ComportamientoJefe());
     }
 
@@ -55,14 +63,8 @@ public class JefeFinal : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            if(Random.Range(0,2) == 0){
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(prefabProyectil, puntoSpawnProyectil.position, Quaternion.identity);
-            }
-            else{
-               yield return new WaitForSeconds(0.5f);
-                Instantiate(prefabProyectil2, puntoSpawnProyectil.position, Quaternion.identity); 
-            }
+                InvokeRepeating(nameof(GeneradorProyectiles), tiempoEntreDisparos, tiempoIntervaloEntreDisparos);
         }
     }
 
@@ -120,5 +122,15 @@ public class JefeFinal : MonoBehaviour
         // Actualiza el estado actual según las probabilidades y condiciones que desees
         // Puedes usar Random.Range para generar números aleatorios y decidir el siguiente estado
         estadoActual = Random.Range(0, 3);
+    }
+
+    void GeneradorProyectiles(){
+        GameObject pooledObject = objectPool.GetPooledObject();
+
+        if(pooledObject != null){
+            pooledObject.transform.position =  transform.position;
+            pooledObject.transform.rotation = Quaternion.identity;
+            pooledObject.SetActive(true);
+        }
     }
 }

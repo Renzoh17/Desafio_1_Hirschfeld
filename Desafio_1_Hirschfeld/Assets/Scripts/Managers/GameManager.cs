@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         if(Instance == null){
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            score = Mathf.Max(PlayerPrefs.GetInt("Puntaje", 0 ));
         }
         else{
             Destroy(gameObject);
@@ -53,9 +54,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points){
         score += points;
 
-        if(score < 0){
-            ApplicationManager.Instance.GoToPreviusScene();
-        }
+        if(score < 0) score = 0;
+        PlayerPrefs.SetInt("Puntaje", score);
     }
 
     public void ResetScore(){

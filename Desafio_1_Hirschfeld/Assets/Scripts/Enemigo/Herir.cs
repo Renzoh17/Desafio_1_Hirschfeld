@@ -19,4 +19,5 @@ public class Herir : MonoBehaviour
                 gameObject.SetActive(false);
         }
     }
+
 }

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Rect
       objectReference: {fileID: 0}
+    - target: {fileID: 2153426920135547298, guid: 248a2e260209dc24da7d5ef06f454345, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3293886153406853718, guid: 248a2e260209dc24da7d5ef06f454345, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3215146

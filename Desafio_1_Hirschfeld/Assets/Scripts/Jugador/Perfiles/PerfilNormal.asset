@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a4500e687da5e489c3f1e12c592cfb, type: 3}
   m_Name: PerfilNormal
   m_EditorClassIdentifier: 
-  vida: 10
-  vidaMaxima: 10
+  vida: 20
+  vidaMaxima: 20
   velocidad: 5
   fuerzaSalto: 5
   hyperJumps: 0
   jumpSFX: {fileID: 8300000, guid: c432eceb2b339104391811d4f395b112, type: 3}
   collisionSFX: {fileID: 8300000, guid: c287375ea1df3164b91b9cb8e0af8715, type: 3}
-  currentLevel: 0
-  currentExperience: 0
-  experienceToNextLevel: 20
+  currentLevel: 1
+  currentExperience: 20
+  experienceToNextLevel: 50
   experienceEscale: 30

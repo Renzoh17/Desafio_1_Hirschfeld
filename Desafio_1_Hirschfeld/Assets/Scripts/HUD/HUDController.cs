@@ -10,6 +10,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] GameObject iconoJump;
     [SerializeField] GameObject contenedorIconosJump;
+    [SerializeField] GameObject menuConfig;
 
     private void OnEnable(){
         GameEvents.OnPause += Pausar;
@@ -22,11 +23,11 @@ public class HUDController : MonoBehaviour
     }
 
     private void Pausar(){
-        UpdateTextHUD("PAUSADO");
+        menuConfig.SetActive(true);
     }
 
     private void Reanudar(){
-        UpdateTextHUD("REANUDADO");
+        menuConfig.SetActive(false);
     }
 
     public void UpdateTextHUD(string newText){
